@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Chauke – Social Media Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>David Chauke</h1>
+      <p>Multimedia designer specializing in motion graphics and social media animations. Explore my work below!</p>
+    </div>
+    <div class="hero-img">
+      <img src="media/hero-portrait.jpg" alt="David Chauke">
+    </div>
+  </header>
+
+  <!-- GALLERY FILTER -->
+  <section class="filter-section">
+    <button class="filter-btn" data-type="all">All</button>
+    <button class="filter-btn" data-type="video">Videos</button>
+    <button class="filter-btn" data-type="gif">GIFs</button>
+    <button class="filter-btn" data-type="image">Images</button>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- JS populates gallery items -->
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contact">
+      <h4>Let's collaborate</h4>
+      <p>Available for social media campaigns, agency projects, and freelance work.</p>
+      <a href="mailto:hello@pixelshield.co" class="btn">Email Me</a>
+    </div>
+    <p>© <span id="year"></span> David Chauke – Multimedia Designer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
