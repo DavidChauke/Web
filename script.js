@@ -1,18 +1,25 @@
 function openProject(projectName, el) {
   // Replace these with your real video sources or URLs
   const projects = {
-    nexipraz: 'Media/Nexipraz.mp4',
-    brand1: 'Media/Cebrolux.mp4',
-    brand2: 'Media/Galderma.mp4',
+    nexipraz: 'Nexipraz.html',      // should open in new tab
+    brand1: 'Cebrolux.html',       // should open in new tab
+    brand2: 'Media/Galderma.mp4',  // inline video
     brand3: 'Media/Brand3.mp4',
     brand4: 'Media/Brand4.mp4',
     brand5: 'Media/Brand5.mp4',
   };
 
-  // Prevent multiple videos playing at once: remove old videos
+  // If this project is an HTML page (link), open in new tab
+  if (projects[projectName].endsWith('.html') || projects[projectName].startsWith('http')) {
+    window.open(projects[projectName], '_blank');
+    return;
+  }
+
+  // Otherwise, treat it as a video
+  // Remove any other playing videos
   document.querySelectorAll('.card video').forEach(v => v.remove());
 
-  // Create video element
+  // Create and append video element
   const video = document.createElement('video');
   video.src = projects[projectName];
   video.autoplay = true;
@@ -20,6 +27,5 @@ function openProject(projectName, el) {
   video.loop = true;
   video.className = 'preview-video';
 
-  // Append to clicked card
   el.appendChild(video);
 }
